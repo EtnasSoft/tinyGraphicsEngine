@@ -35,6 +35,7 @@
     - -:test/templates
   :source:
     - src/**
+    - lib/conio/**
   :support:
     - test/support
 
