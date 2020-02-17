@@ -16,8 +16,25 @@ include_directories(vendor/ceedling/vendor/cmock/src)
 include_directories(vendor/ceedling/vendor/unity/src)
 
 add_executable(graphicsEngineClion
+        # Legacy files for testing purposes
         src/gpio.c
         src/gpio.h
         src/player.c
         src/player.h
-        main.c)
+
+        src/screenParams.h
+        src/assets.h
+
+        src/helpers.h
+        src/helpers.c
+        src/engine.h
+        src/engine.c
+        src/emulator.h
+        src/emulator.c
+
+        lib/conio/conio.h
+        lib/conio/conio.c
+
+        #Main file
+        main.c
+        src/screenInterface.c src/screenInterface.h src/i2c.c src/i2c.h src/ssd1306.c src/ssd1306.h)

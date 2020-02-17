@@ -1,5 +1,5 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef GRAPHICSENGINECLION_PLAYER_H
+#define GRAPHICSENGINECLION_PLAYER_H
 
 struct Player {
   int x,
@@ -15,4 +15,4 @@ void player_movePlayerDown(void);
 
 struct Player player_getPlayer(void);
 
-#endif // PLAYER_H
+#endif // GRAPHICSENGINECLION_PLAYER_H

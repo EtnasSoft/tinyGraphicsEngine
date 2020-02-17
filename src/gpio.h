@@ -1,6 +1,6 @@
-#ifndef GPIO_H
-#define GPIO_H
+#ifndef GRAPHICSENGINECLION_GPIO_H
+#define GRAPHICSENGINECLION_GPIO_H
 
 int gpio_digitalRead(int button);
 
-#endif // GPIO_H
+#endif // GRAPHICSENGINECLION_GPIO_H

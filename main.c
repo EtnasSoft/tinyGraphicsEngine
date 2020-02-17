@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include "src/engine.h"
+
+typedef uint8_t byte;
 
 int main(void) {
-  printf("Hello world!");
+  engineStart();
   return 0;
 }

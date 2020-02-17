@@ -1,7 +1,7 @@
-#ifndef HELPERS_H
-#define HELPERS_H
+#ifndef GRAPHICSENGINECLION_HELPERS_H
+#define GRAPHICSENGINECLION_HELPERS_H
 
 #define MIN(a,b) (((a)<(b))?(a):(b))
 #define MAX(a,b) (((a)>(b))?(a):(b))
 
-#endif // HELPERS_H
+#endif // GRAPHICSENGINECLION_HELPERS_H

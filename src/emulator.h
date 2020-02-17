@@ -1,11 +1,13 @@
 #ifndef EMULATOR_H
 #define EMULATOR_H
+
 typedef uint8_t byte;
 
-void PrintRow(byte data[], int dataLength, byte y);
-void PrintPlayFieldRow(byte row);
-void PrintPlayField();
-void PrintDemoMessage();
+void emulatorPrintEngineData(int iScrollX, int iScrollY, byte bXOff, byte bYOff, int ty);
+void emulatorPrintRow(byte data[], int dataLength, byte y);
+void emulatorPrintPlayFieldRow(byte row, byte bPlayfield[]);
+void emulatorPrintPlayField(byte bPlayfield[]);
+void emulatorPrintDemoMessage();
 void cls();
 
 #endif // EMULATOR_H

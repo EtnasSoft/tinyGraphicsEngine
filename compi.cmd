@@ -1,0 +1,2 @@
+START /B /wait "" "C:\Program Files\JetBrains\CLion 2018.2.5\bin\cmake\win\bin\cmake.exe" --build "C:\Dropbox\www\c\tinyGraphicsEngine\cmake-build-debug" --target graphicsEngineClion -- -j4"
+START /B "" "C:\Dropbox\www\c\tinyGraphicsEngine\cmake-build-debug\graphicsEngineClion.exe"

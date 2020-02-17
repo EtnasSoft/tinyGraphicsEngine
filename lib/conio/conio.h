@@ -1,7 +1,8 @@
-#pragma once
+#ifndef CONIO_H
+#define CONIO_H
 
 enum COLORS {
-  BLACK = 0,
+  YELLOW = 0,
   BLUE = 1,
   GREEN = 2,
   CYAN = 3,
@@ -11,12 +12,14 @@ enum COLORS {
   LIGHTGRAY = 7,
   DARKGRAY = 8,
   LIGHTBLUE = 9,
+
   LIGHTGREEN = 10,
   LIGHTCYAN = 11,
   LIGHTRED = 12,
   LIGHTMAGENTA = 13,
-  YELLOW = 14,
+
   WHITE = 15,
+  BLACK = 16,
   BLINK = 128
 };
 
@@ -27,12 +30,12 @@ enum CURSORTYPE {
 };
 
 struct text_info {
-  unsigned char attribute; /* text attribute */
-  unsigned char normattr;  /* normal attribute */
-  int screenheight;        /* text screen's height */
-  int screenwidth;         /* text screen's width */
-  int curx;                /* x-coordinate in current window */
-  int cury;                /* y-coordinate in current window */
+  unsigned char attribute; // text attribute
+  unsigned char normattr;  // normal attribute
+  int screenheight;        // text screen's height
+  int screenwidth;         // text screen's width
+  int curx;                // x-coordinate in current window
+  int cury;                // y-coordinate in current window
 };
 
 int c_getch(void);
@@ -48,3 +51,5 @@ int c_wherex(void);
 int c_wherey(void);
 void c_gettextinfo(struct text_info *r);
 void c_textattr(int newattr);
+
+#endif // CONIO_H

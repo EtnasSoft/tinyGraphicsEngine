@@ -1,12 +1,14 @@
 
-#ifndef ENGINE_H
-#define ENGINE_H
+#ifndef GRAPHICSENGINECLION_ENGINE_H
+#define GRAPHICSENGINECLION_ENGINE_H
+
+#include <stdint.h>
 typedef uint8_t byte;
 
-int main2();
-void DrawShiftedChar(byte *s1, byte *s2, byte *d, byte bXOff, byte bYOff);
-void DrawPlayField(int bScrollX, int bScrollY);
-void reloadPlayField();
-void adjustPlayField();
+int engineStart();
+void engineDrawShiftedChar(byte *s1, byte *s2, byte *d, byte bXOff, byte bYOff);
+void engineDrawPlayField(int bScrollX, int bScrollY);
+void engineReloadPlayField();
+void engineAdjustPlayField();
 
-#endif // ENGINE_H
+#endif // GRAPHICSENGINECLION_ENGINE_H
