@@ -1,18 +1,11 @@
 #include "../vendor/ceedling/vendor/unity/src/unity.h"
-
 #include "unity.h"
-
 #include "i2c.h"
 
-void setUp(void)
-{
-}
+void setUp(void) {}
 
-void tearDown(void)
-{
-}
+void tearDown(void) {}
 
-void test_i2c_NeedToImplement(void)
-{
-    TEST_IGNORE_MESSAGE("Need to Implement i2c");
+void test_i2c_NeedToImplement(void) {
+  TEST_IGNORE_MESSAGE("Need to Implement i2c");
 }

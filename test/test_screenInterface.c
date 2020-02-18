@@ -24,22 +24,6 @@ void test_screenInitShouldCallToI2CModuleForSetupTheScreen() {
   screenInit(FLIP, INVERT);
 }
 
-void test_screenWriteCommandShouldSendTheCorrectSequence() {
-  unsigned char buf[2];
-  unsigned char myCommand = 0x10;
-
-  buf[0] = 0x00;
-  buf[1] = myCommand;
-
-  i2cWrite_ExpectWithArray(buf, sizeof(buf), sizeof(buf), SCREEN_SLAVE_ADDRESS);
-
-  screenWriteCommand(myCommand);
-}
-
-void test_screenWriteCommand2ShouldSendTheCorrectSequence() {
-  // TODO... implement...
-}
-
 void test_screenWriteShouldCallToI2CModule() {
   unsigned char seq[] = {
       0x00,       // Starting to send a commands sequence or script
@@ -99,6 +83,26 @@ void test_screenSetPositionAtAnyCoordsShouldSetupTheCorrectCoordsForWrite() {
   screenSetPosition(xPos, yPos);
 }
 
+void test_screenFillShouldOverrideScreenWithAnyByteProvided() {
+  unsigned char byteForFill = 0xff;
+  unsigned char expected[SCREEN_WIDTH];
+  memset(expected, byteForFill, SCREEN_WIDTH);
+
+  // 8 times (or same as SCREEN_HEIGHT)
+  i2cWriteData_ExpectWithArray(expected, SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_SLAVE_ADDRESS);
+  i2cWriteData_ExpectWithArray(expected, SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_SLAVE_ADDRESS);
+  i2cWriteData_ExpectWithArray(expected, SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_SLAVE_ADDRESS);
+  i2cWriteData_ExpectWithArray(expected, SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_SLAVE_ADDRESS);
+  i2cWriteData_ExpectWithArray(expected, SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_SLAVE_ADDRESS);
+  i2cWriteData_ExpectWithArray(expected, SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_SLAVE_ADDRESS);
+  i2cWriteData_ExpectWithArray(expected, SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_SLAVE_ADDRESS);
+  i2cWriteData_ExpectWithArray(expected, SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_SLAVE_ADDRESS);
+
+  i2cWrite_Ignore();
+
+  screenFill(byteForFill);
+}
+
 void test_screenClearShouldOverrideScreenWithBlankValues() {
   unsigned char clearChar = 0x00;
   unsigned char expected[SCREEN_WIDTH];
@@ -117,6 +121,32 @@ void test_screenClearShouldOverrideScreenWithBlankValues() {
   i2cWrite_Ignore();
 
   screenClear();
+}
+
+void test_screenWriteCommandShouldSendTheCorrectSequence() {
+  unsigned char buf[2];
+  unsigned char myCommand = 0x10;
+
+  buf[0] = 0x00;
+  buf[1] = myCommand;
+
+  i2cWrite_ExpectWithArray(buf, sizeof(buf), sizeof(buf), SCREEN_SLAVE_ADDRESS);
+
+  screenWriteCommand(myCommand);
+}
+
+void test_screenWriteCommand2ShouldSendTheCorrectSequence() {
+  unsigned char buf[3];
+  unsigned char command1 = 0x10,
+    command2 = 0x20;
+
+  buf[0] = 0x00;
+  buf[1] = command1;
+  buf[2] = command2;
+
+  i2cWrite_ExpectWithArray(buf, sizeof(buf), sizeof(buf), SCREEN_SLAVE_ADDRESS);
+
+  screenWriteCommand2(command1, command2);
 }
 
 void test_screenShutdownShouldSendTheCorrectCommandsToScreen() {
@@ -144,4 +174,3 @@ void test_screenSetContrastShouldSendTheCorrectCommandsToScreen() {
 
   screenSetContrast(newContrast);
 }
-
