@@ -1,7 +1,7 @@
 #ifndef GRAPHICSENGINECLION_ASSETS_H
 #define GRAPHICSENGINECLION_ASSETS_H
 
-typedef uint8_t byte;
+#include "Types.h"
 
 const byte ucTiles[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // Empty  (0)

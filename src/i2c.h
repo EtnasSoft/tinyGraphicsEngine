@@ -1,11 +1,10 @@
 #ifndef GRAPHICSENGINECLION_I2C_H
 #define GRAPHICSENGINECLION_I2C_H
 
-#include <stdint.h>
-typedef uint8_t byte;
+#include "Types.h"
 
-void i2cStart(byte addr);
-void i2cStop();
+void i2cBegin(byte addr);
+void i2cEnd();
 void i2cByteWrite(byte *pData, byte bLen);
 
 static inline void i2cByteOut(byte b);

@@ -37,4 +37,8 @@ add_executable(graphicsEngineClion
 
         #Main file
         main.c
-        src/screenInterface.c src/screenInterface.h src/i2c.c src/i2c.h src/ssd1306.c src/ssd1306.h)
+        src/screenInterface.c
+        src/screenInterface.h
+        src/i2c.c
+        src/i2c.h
+        )

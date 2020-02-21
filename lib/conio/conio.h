@@ -1,6 +1,7 @@
 #ifndef CONIO_H
 #define CONIO_H
 
+#ifndef COLORS
 enum COLORS {
   YELLOW = 0,
   BLUE = 1,
@@ -22,13 +23,17 @@ enum COLORS {
   BLACK = 16,
   BLINK = 128
 };
+#endif
 
+#ifndef CURSORTYPE
 enum CURSORTYPE {
   _NOCURSOR,    //     turns off the cursor
   _SOLIDCURSOR, //  solid block cursor
   _NORMALCURSOR // normal underscore cursor
 };
+#endif
 
+#ifndef text_info
 struct text_info {
   unsigned char attribute; // text attribute
   unsigned char normattr;  // normal attribute
@@ -37,6 +42,7 @@ struct text_info {
   int curx;                // x-coordinate in current window
   int cury;                // y-coordinate in current window
 };
+#endif
 
 int c_getch(void);
 int c_getche(void);

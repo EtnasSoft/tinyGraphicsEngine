@@ -1,7 +1,7 @@
 #ifndef GRAPHICSENGINECLION_SCREENINTERFACE_H
 #define GRAPHICSENGINECLION_SCREENINTERFACE_H
 
-typedef uint8_t byte;
+#include "Types.h"
 
 void screenInit(byte flip, byte invert);
 void screenWrite(unsigned char *buf, size_t len);

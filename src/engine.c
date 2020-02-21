@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <stdint.h>
 #include <string.h>
 #include "../lib/conio/conio.h"
 
+#include "Types.h"
 #include "screenParams.h"
 #include "assets.h"
 #include "engine.h"
@@ -11,7 +11,7 @@
 
 // DEFS
 // ------------------------------------------------------------------
-typedef uint8_t byte;
+
 
 #define DEBUG
 #define INCREASE 43 // ASCII CODE for +
@@ -33,7 +33,7 @@ int engineStart(void) {
 
   // Init the screen position and load the tilemap accordingly
   iScrollX = 0;
-  iScrollY = 232;
+  iScrollY = 0;
   engineReloadPlayField();
 
   engineDrawPlayField(iScrollX, iScrollY);

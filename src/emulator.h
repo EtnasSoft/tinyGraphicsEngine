@@ -1,7 +1,7 @@
 #ifndef EMULATOR_H
 #define EMULATOR_H
 
-typedef uint8_t byte;
+#include "Types.h"
 
 void emulatorPrintEngineData(int iScrollX, int iScrollY, byte bXOff, byte bYOff, int ty);
 void emulatorPrintRow(byte data[], int dataLength, byte y);

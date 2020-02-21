@@ -4,8 +4,8 @@
 #include <stdlib.h>
 
 #include "screenParams.h"
+#include "Types.h"
 
-typedef uint8_t byte;
 
 // CONSTS
 // ------------------------------------------------------------------
@@ -35,7 +35,7 @@ void emulatorPrintRow(byte data[], int dataLength, byte y) {
   byte i;
   printf("\n[%i]\t ", y);
 
-  for (i = 0; i <= dataLength; i += MODULE ) {
+  for (i = 0; i < dataLength; i += MODULE ) {
     printf("%s", data[i] == 255 ? FILL : BLANK);
   }
 }

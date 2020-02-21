@@ -2,8 +2,7 @@
 #ifndef GRAPHICSENGINECLION_ENGINE_H
 #define GRAPHICSENGINECLION_ENGINE_H
 
-#include <stdint.h>
-typedef uint8_t byte;
+#include "Types.h"
 
 int engineStart();
 void engineDrawShiftedChar(byte *s1, byte *s2, byte *d, byte bXOff, byte bYOff);
