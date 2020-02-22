@@ -9,5 +9,3 @@ void tearDown(void) {}
 void test_i2c_NeedToImplement(void) {
   TEST_IGNORE_MESSAGE("Need to Implement i2c");
 }
-
-void test_i2cBeginShould

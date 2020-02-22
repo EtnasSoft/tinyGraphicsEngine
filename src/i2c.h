@@ -7,7 +7,7 @@ void i2cBegin(byte addr);
 void i2cEnd();
 void i2cByteWrite(byte *pData, byte bLen);
 
-static inline void i2cByteOut(byte b);
+void i2cByteOut(byte b);
 
 
 // Wrappers

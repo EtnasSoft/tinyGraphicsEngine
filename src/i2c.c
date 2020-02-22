@@ -31,3 +31,6 @@ void i2cWriteData(byte *buf, byte len, byte screenSlaveAddress) {
   i2cEnd();
 }
 
+void i2cByteOut(byte b) {
+
+}
